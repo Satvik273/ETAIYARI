@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="card p-4">
+    <h4>Upload Your Notes</h4>
+    <form method="POST" enctype="multipart/form-data">
+        <div class="form-group">
+            <label>Select File (PDF, JPG, JPEG, DOCX)</label>
+            <input type="file" name="file" class="form-control" required>
+        </div>
+        <button type="submit" class="btn btn-primary">Upload</button>
+    </form>
+</div>
+{% endblock %}

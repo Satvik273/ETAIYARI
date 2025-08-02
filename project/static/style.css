@@ -1,0 +1,16 @@
+body {
+    background-color: #f8f9fa;
+}
+.sidebar {
+    width: 250px;
+    height: 100vh;
+    background-color: #007bff;
+}
+.nav-link.active {
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 5px;
+}
+.card {
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
