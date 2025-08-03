@@ -2,32 +2,35 @@
 <html>
 <head>
     <title>Teacher Dashboard</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
-    <div class="d-flex">
-        <!-- Sidebar -->
-        <div class="bg-primary text-white p-3 sidebar">
-            <h4 class="mb-4">📘 Dashboard</h4>
-            <ul class="nav flex-column">
-                <li class="nav-item"><a class="nav-link text-white" href="{{ url_for('home') }}">Home</a></li>
-                <li class="nav-item"><a class="nav-link text-white" href="{{ url_for('upload') }}">Upload</a></li>
-                <li class="nav-item"><a class="nav-link text-white" href="{{ url_for('update') }}">Update</a></li>
-                <li class="nav-item"><a class="nav-link text-white" href="{{ url_for('logout') }}">Logout</a></li>
-            </ul>
-        </div>
-        <!-- Content -->
-        <div class="flex-grow-1 p-4">
-            {% if message %}
-            <div class="alert alert-info alert-dismissible fade show" role="alert">
-                {{ message }}
-                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            {% endif %}
-            {% block content %}{% endblock %}
+    <div class="container-fluid">
+        <div class="row no-gutters">
+            <!-- Sidebar -->
+            <nav class="col-12 col-md-3 col-lg-2 bg-primary text-white p-3 sidebar">
+                <h4 class="mb-4">📘 Dashboard</h4>
+                <ul class="nav flex-column">
+                    <li class="nav-item"><a class="nav-link text-white" href="{{ url_for('home') }}">Home</a></li>
+                    <li class="nav-item"><a class="nav-link text-white" href="{{ url_for('upload') }}">Upload</a></li>
+                    <li class="nav-item"><a class="nav-link text-white" href="{{ url_for('update') }}">Update</a></li>
+                    <li class="nav-item"><a class="nav-link text-white" href="{{ url_for('logout') }}">Logout</a></li>
+                </ul>
+            </nav>
+            <!-- Content -->
+            <main class="col-12 col-md-9 col-lg-10 p-4">
+                {% if message %}
+                <div class="alert alert-info alert-dismissible fade show" role="alert">
+                    {{ message }}
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                {% endif %}
+                {% block content %}{% endblock %}
+            </main>
         </div>
     </div>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
